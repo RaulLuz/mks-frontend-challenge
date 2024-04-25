@@ -1,0 +1,31 @@
+$screen-sm-max: 460px;
+
+$screen-md-max: 685px;
+
+$screen-lg-max: 1440px;
+
+$screen-xl-min: 1230px;
+
+@mixin sm-mobile {
+  @media (max-width: #{$screen-sm-max}) {
+      @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$screen-md-max}) {
+      @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$screen-lg-max}) {
+      @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$screen-xl-min}) {
+      @content;
+  }
+}

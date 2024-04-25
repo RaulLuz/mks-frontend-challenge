@@ -1,0 +1,50 @@
+.header {
+    background-color: $primary;
+    padding: 28px 0 29px;
+
+    &__content {
+        display: flex;
+        max-width: 1287px;
+        margin: 0 auto;
+        justify-content: space-between;
+
+        &_logo {
+            display: flex;
+            align-items: flex-end;
+
+            h1 {
+                font-weight: 600;
+                font-size: 40px;
+                color: $white;
+                display: flex;
+                align-items: flex-end;
+            }
+    
+            span {
+                display: block;
+                font-size: 20px;
+                font-weight: 300;
+                color: $white;
+                line-height: 34px;
+                margin-left: 10px;
+            }
+        }
+
+        button {
+            padding: 0 27px 0 15px;
+            height: 45px;
+            background: $white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+
+            span {
+                font-size: 18px;
+                font-weight: 700;
+                color: $secondary;
+            }
+        }
+    }
+}

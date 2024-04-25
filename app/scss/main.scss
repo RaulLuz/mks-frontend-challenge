@@ -1,0 +1,46 @@
+@import 'variables';
+@import 'breakpoints';
+@import 'components/header';
+@import 'components/product-list';
+@import 'components/footer';
+@import 'components/cart';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    ul {
+        list-style: none;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+body {
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #373737;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+}
