@@ -1,11 +1,11 @@
-import './scss/main.scss';
+import "./scss/main.scss";
 import ProductList from "./components/ProductList";
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query";
 import { QueryClient } from "@tanstack/react-query";
 import getProducts from "./api";
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Cart from './components/Cart/Cart';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Cart from "./components/Cart/Cart";
 
 export default async function Home() {
   const queryClient = new QueryClient();
@@ -16,7 +16,7 @@ export default async function Home() {
   });
 
   return (
-    <main className=''>
+    <main className="">
       <HydrationBoundary state={dehydrate(queryClient)}>
         <Header />
         <ProductList />

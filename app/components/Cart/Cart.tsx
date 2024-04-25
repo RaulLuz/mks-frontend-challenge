@@ -23,7 +23,10 @@ const Cart = () => {
     queryFn: getProducts,
   });
   const { isCartOpen, setIsCartOpen, productsInCart } = useStore();
-  const totalPrice = productsInCart.reduce((acc, product) => acc + (Number(product.price) * product.quantity), 0);
+  const totalPrice = productsInCart.reduce(
+    (acc, product) => acc + Number(product.price) * product.quantity,
+    0
+  );
 
   if (!products) return null;
 
@@ -44,7 +47,13 @@ const Cart = () => {
         </button>
       </div>
 
-      <Products />
+      {productsInCart.length === 0 ? (
+        <div className="cart__empty">
+          <h3>Carrinho vazio</h3>
+        </div>
+      ) : (
+        <Products />
+      )}
 
       <div className="cart__footer">
         <div
@@ -53,7 +62,7 @@ const Cart = () => {
           } cart__footer_total`}
         >
           <p>Total:</p>
-          <p>R${totalPrice.toLocaleString('pt-br')}</p>
+          <p>R${totalPrice.toLocaleString("pt-br")}</p>
         </div>
         <button disabled={productsInCart.length === 0}>Finalizar compra</button>
       </div>
