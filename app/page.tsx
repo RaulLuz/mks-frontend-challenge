@@ -16,7 +16,7 @@ export default async function Home() {
   });
 
   return (
-    <main className="">
+    <main id="app">
       <HydrationBoundary state={dehydrate(queryClient)}>
         <Header />
         <ProductList />

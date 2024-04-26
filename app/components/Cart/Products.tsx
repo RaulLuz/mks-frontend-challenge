@@ -1,7 +1,7 @@
 import getProducts from "@/app/api";
 import { useStore } from "@/app/context/StoreContext";
 import { useQuery } from "@tanstack/react-query";
-import { AnimatePresence, motion, useCycle } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import QuantitySelector from "./QuantitySelector";
 import Image from "next/image";
@@ -32,7 +32,10 @@ const Products = () => {
         transition={{ duration: 0.2 }}
       >
         {isCartOpen &&
-          productsInCart?.map((product, index) => (
+          productsInCart?.map((product, index) => {
+            let finalPrice = Number(product.price) * product.quantity
+
+            return (
             <motion.div
               key={product.id}
               className="cart__products_product"
@@ -61,9 +64,9 @@ const Products = () => {
               />
               <h3>{product.name}</h3>
               <QuantitySelector product={product} />
-              <p>R${Number(product.price).toLocaleString("pt-br")}</p>
+              <p>R${finalPrice.toLocaleString("pt-br")}</p>
             </motion.div>
-          ))}
+          )})}
       </motion.div>
     </AnimatePresence>
   );

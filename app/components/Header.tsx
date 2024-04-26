@@ -6,7 +6,7 @@ import { useStore } from "../context/StoreContext";
 
 const Header = () => {
   const { isCartOpen, setIsCartOpen, productsInCart } = useStore();
-  const totalProducts = productsInCart.length;
+  const totalProducts = productsInCart?.length;
 
   return (
     <header className="header">
